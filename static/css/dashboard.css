@@ -1,0 +1,233 @@
+/* Root Variables */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333;
+    --sidebar-bg: #f8f9faaf;
+    --sidebar-text: black;
+    --header-bg: #ffffff;
+    --header-text: #333;
+}
+
+.dark-mode {
+    --background-color: #1e1e1e;
+    --text-color: #f1f1f1;
+    --sidebar-bg: #2c2c2c;
+    --sidebar-text: white;
+    --header-bg: #2c2c2c;
+    --header-text: #ffffff;
+}
+
+/* Body Styling */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: 0.3s ease-in-out;
+    font-family: 'Nunito', serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Header Styling */
+.navbar {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    transition: 0.3s ease-in-out;
+}
+
+.navbar a,
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: var(--header-text) !important;
+    transition: 0.2s;
+}
+
+.navbar a:hover {
+    color: #7b65f6 !important;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar .nav-link {
+    color: var(--sidebar-text) !important;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    transition: color 0.3s ease-in-out;
+}
+
+/* Profile Section */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+    transition: opacity 0.3s ease-in-out;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--sidebar-text);
+}
+
+/* Toggle Button */
+/* General Button Styling */
+#darkModeToggle {
+    background: var(--background-color);
+    border: none;
+    color: var(--sidebar-text);
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle i {
+    margin-right: 5px;
+}
+
+/* Light Mode Styles */
+body:not(.dark-mode) #darkModeToggle {
+    background-color: var(--sidebar-bg); /* Light blue */
+    color: var(--text-color); /* White text */
+}
+
+body:not(.dark-mode) #darkModeToggle:hover {
+    background-color: var(--sidebar-bg); /* Darker blue on hover */
+}
+
+/* Dark Mode Styles */
+body.dark-mode #darkModeToggle {
+    background-color: #444; /* Dark background */
+    color: var(--text-color); /* White text */
+}
+
+body.dark-mode #darkModeToggle:hover {
+    background-color: #555; /* Slightly lighter dark background on hover */
+}
+
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    padding: 12px;
+}
+
+.sidebar-nav li a {
+    color: var(--sidebar-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar-nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Collapsed Sidebar */
+.sidebar.closed {
+    width: 80px;
+}
+
+.sidebar.closed .username,
+.sidebar.closed .nav-text {
+    display: none;
+}
+
+.sidebar.closed .sidebar-nav li a {
+    justify-content: center;
+}
+
+.sidebar.closed .sidebar-nav li {
+    padding: 10px;
+}
+
+/* Content Wrapper */
+#content-wrapper {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar.closed + #content-wrapper {
+    margin-left: 80px;
+}
+
+/* Logout Button */
+.logout-btn {
+    background: #f80202;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.logout-btn i {
+    transition: transform 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    background:#d20909;
+    transform: scale(1.05);
+}
+
+.logout-btn:active {
+    transform: scale(0.7);
+}
