@@ -1,4 +1,4 @@
-**## Small Business CRM
+**## Small Business CRM**
 
 ## Overview
 Small Business CRM is a lightweight, offline Customer Relationship Management (CRM) system tailored for small businesses that do not operate through an e-commerce platform but require an organized method for managing clients, leads, sales, products, and tasks.
